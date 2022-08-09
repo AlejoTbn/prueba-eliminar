@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block contenido %}
+<form class="row g-3">
+    <div class="card shadow p-3 mb-5 bg-body rounded">
+        <div class="card-body" style="background-color: rgb(236, 233, 205)">
+            <h2 class="card-title">Inicio de sesión</h2>
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="inputEmail4">
+                </div>      
+                <br/>
+                <div class="col-md-6">
+                    <label for="inputPassword4" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="inputPassword4">
+                </div>
+                <br/>
+            <a href="#" class="btn btn-primary">Ingresar</a> | <a href="#" class="btn btn-success">Registrarme</a>
+            <h2 class="mensaje_error">{{ mensaje }}</h2>
+        </div>
+    </div>
+</form>
+{% endblock %}

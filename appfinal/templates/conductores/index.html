@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de conductores {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header" style="background-color: rgb(30, 214, 255)">
+        <a name="" id="" class="btn btn-success" href="{% url 'crear' %}" role="button">Agregar nuevo conductor</a>
+    </div>
+    <div class="card-body" style="background-color: rgb(236, 233, 205)">
+        <h4 class="card-title">Title</h4>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Cedula</th>
+                    <th>Telefono</th>
+                    <th>Direccion</th>
+                    <th>Ciudad</th>
+                    <th>Placa</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for conductor in conductores %}
+                <tr>
+                    <td>{{ conductor.id }}</td>
+                    <td>{{ conductor.nombre }}</td>
+                    <td>{{ conductor.cedula }}</td>
+                    <td>{{ conductor.telefono }}</td>
+                    <td>{{ conductor.direccion }}</td>
+                    <td>{{ conductor.ciudad }}</td>
+                    <td>
+                    <img src="{{ conductor.placa.url }}"  height="100" width="150"/>
+
+                        
+                    </td>
+                    <td>
+                        <a name="" id="" class="btn btn-info" href="{% url 'editar' conductor.id %}" role="button">Editar</a> 
+                        |
+                        <a name="" id="" class="btn btn-danger" href="{% url 'eliminar' conductor.id %}" role="button">Borrar</a> 
+                    </td>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        
+    </div>
+    <div class="card-footer text-muted" style="background-color: rgb(30, 214, 255)">
+
+    </div>
+</div>
+
+{% endblock %}

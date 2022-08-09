@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %} Editar conductor {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header" style="background-color: rgb(30, 214, 255)">
+        Editar informacion del conductor
+    </div>
+    <div class="card-body" style="background-color: rgb(236, 233, 205)">
+        <h4 class="card-title">Datos del conductor</h4>    
+        {% include 'conductores/form.html' %}
+
+    </div>
+    <div class="card-footer text-muted" style="background-color: rgb(30, 214, 255)">
+
+    </div>
+</div>
+
+{% endblock %}
